@@ -9,7 +9,7 @@
     <!-- Profil Pengguna -->
     <string name="user_name">Sandy Ardiyan</string>
     <string name="user_username">\@sandy_ardiyan</string>
-    <string name="user_description">Saya seorang Back End Developer</string>
+    <string name="user_description">Backend bukan cuma kode, tapi seni bikin semuanya nyambung</string>
 
     <!-- Tombol Menu -->
     <string name="menu_privacy">Privacy</string>
