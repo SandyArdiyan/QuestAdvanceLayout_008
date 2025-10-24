@@ -47,3 +47,11 @@ fun UIKedua(modifier: Modifier = Modifier) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
+        // Nama dan username
+        Text(
+            text = stringResource(id = R.string.user_name),
+            color = Color.White,
+            fontSize = 22.sp,
+            fontWeight = FontWeight.Bold
+        )
+
