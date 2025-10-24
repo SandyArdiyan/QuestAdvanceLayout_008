@@ -55,3 +55,19 @@ fun UIKedua(modifier: Modifier = Modifier) {
             fontWeight = FontWeight.Bold
         )
 
+        Text(
+            text = stringResource(id = R.string.user_username),
+            color = Color.Gray,
+            fontSize = 14.sp
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Text(
+            text = stringResource(id = R.string.user_description),
+            color = Color.White,
+            fontSize = 16.sp
+        )
+
+        Spacer(modifier = Modifier.height(24.dp))
+
