@@ -35,3 +35,15 @@ fun UIKedua(modifier: Modifier = Modifier) {
     ) {
         Spacer(modifier = Modifier.height(40.dp))
 
+        // Foto Profil - gunakan foto_sandy.jpg
+        Image(
+            painter = painterResource(id = R.drawable.foto_sandy),
+            contentDescription = "Foto Profil Sandy",
+            contentScale = ContentScale.Crop,
+            modifier = Modifier
+                .size(120.dp)
+                .clip(CircleShape)
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
