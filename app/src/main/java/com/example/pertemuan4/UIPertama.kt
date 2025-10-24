@@ -29,7 +29,7 @@ fun ActivitasPertama(modifier: Modifier){
     Column (modifier= Modifier
         .padding(top=100.dp)
         .fillMaxSize(),
-        horizontalAligment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally
     ){
         Text(
             text = stringResource(id= R.string.prodi),
