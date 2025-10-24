@@ -2,6 +2,7 @@ package com.example.pertemuan4.ui.theme
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -150,4 +151,17 @@ fun MenuButton(icon: androidx.compose.ui.graphics.vector.ImageVector, text: Stri
             )
         }
     }
+}
+
+@Composable
+fun IconSosmed(iconId: Int) {
+    Image(
+        painter = painterResource(id = iconId),
+        contentDescription = null,
+        modifier = Modifier
+            .size(32.dp)
+            .padding(horizontal = 6.dp)
+            .clickable() { /* buka link atau aksi sosial media */ },
+        contentScale = ContentScale.Fit
+    )
 }
