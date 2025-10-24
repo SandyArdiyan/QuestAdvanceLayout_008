@@ -78,4 +78,24 @@ fun UIKedua(modifier: Modifier = Modifier) {
 
         Spacer(modifier = Modifier.height(20.dp))
 
+        // Tombol Logout
+        Button(
+            onClick = { /* Aksi logout nanti diisi */ },
+            colors = ButtonDefaults.buttonColors(containerColor = Color.Red),
+            shape = RoundedCornerShape(50),
+            modifier = Modifier
+                .fillMaxWidth(0.8f)
+                .height(50.dp)
+        ) {
+            Icon(
+                imageVector = Icons.Filled.ExitToApp,
+                contentDescription = null,
+                tint = Color.White
+            )
+            Spacer(modifier = Modifier.width(8.dp))
+            Text(text = stringResource(id = R.string.menu_logout), color = Color.White)
+        }
+
+        Spacer(modifier = Modifier.height(24.dp))
+
 
