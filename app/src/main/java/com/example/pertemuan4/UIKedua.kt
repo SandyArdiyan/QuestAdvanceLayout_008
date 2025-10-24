@@ -27,96 +27,108 @@ import com.example.pertemuan4.R
 
 @Composable
 fun UIKedua(modifier: Modifier = Modifier) {
-    Column(
+    Box(
         modifier = modifier
             .fillMaxSize()
-            .background(Color(0xFF101010))
-            .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Spacer(modifier = Modifier.height(40.dp))
-
-        // Foto Profil - gunakan foto_sandy.jpg
+        // Background
         Image(
-            painter = painterResource(id = R.drawable.foto_sandy),
-            contentDescription = "Foto Profil Sandy",
+            painter = painterResource(id = R.drawable.background),
+            contentDescription = null,
             contentScale = ContentScale.Crop,
-            modifier = Modifier
-                .size(120.dp)
-                .clip(CircleShape)
+            modifier = Modifier.fillMaxSize()
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
-
-        // Deretan ikon media sosial
-        Row(
-            modifier = Modifier
-                .padding(vertical = 8.dp),
-            horizontalArrangement = Arrangement.Center
+        // Konten utama
+        Column(
+            modifier = modifier
+                .fillMaxSize()
+                .padding(top = 40.dp, start = 16.dp, end = 16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            IconSosmed(R.drawable.facebook)
-            IconSosmed(R.drawable.instagram)
-            IconSosmed(R.drawable.youtube)
-            IconSosmed(R.drawable.linkedin)
-        }
 
-        // Nama dan username
-        Text(
-            text = stringResource(id = R.string.user_name),
-            color = Color.White,
-            fontSize = 22.sp,
-            fontWeight = FontWeight.Bold
-        )
-
-        Text(
-            text = stringResource(id = R.string.user_username),
-            color = Color.Gray,
-            fontSize = 14.sp
-        )
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        Text(
-            text = stringResource(id = R.string.user_description),
-            color = Color.White,
-            fontSize = 16.sp
-        )
-
-        Spacer(modifier = Modifier.height(24.dp))
-
-        // Menu Button
-        MenuButton(icon = Icons.Filled.Lock, text = stringResource(id = R.string.menu_privacy))
-        MenuButton(icon = Icons.Filled.List, text = stringResource(id = R.string.menu_riwayat))
-        MenuButton(icon = Icons.Filled.Settings, text = stringResource(id = R.string.menu_pengaturan))
-
-        Spacer(modifier = Modifier.height(20.dp))
-
-        // Tombol Logout
-        Button(
-            onClick = { /* Aksi logout nanti diisi */ },
-            colors = ButtonDefaults.buttonColors(containerColor = Color.Red),
-            shape = RoundedCornerShape(50),
-            modifier = Modifier
-                .fillMaxWidth(0.8f)
-                .height(50.dp)
-        ) {
-            Icon(
-                imageVector = Icons.Filled.ExitToApp,
-                contentDescription = null,
-                tint = Color.White
+            // Foto Profil
+            Image(
+                painter = painterResource(id = R.drawable.foto_sandy),
+                contentDescription = "Foto Profil Sandy",
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .size(120.dp)
+                    .clip(CircleShape)
             )
-            Spacer(modifier = Modifier.width(8.dp))
-            Text(text = stringResource(id = R.string.menu_logout), color = Color.White)
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            // Deretan ikon media sosial
+            Row(
+                modifier = Modifier.padding(vertical = 8.dp),
+                horizontalArrangement = Arrangement.Center
+            ) {
+                IconSosmed(R.drawable.facebook)
+                IconSosmed(R.drawable.instagram)
+                IconSosmed(R.drawable.youtube)
+                IconSosmed(R.drawable.linkedin)
+            }
+
+            // Nama & Username
+            Text(
+                text = stringResource(id = R.string.user_name),
+                color = Color.White,
+                fontSize = 22.sp,
+                fontWeight = FontWeight.Bold
+            )
+
+            Text(
+                text = stringResource(id = R.string.user_username),
+                color = Color.Gray,
+                fontSize = 14.sp
+            )
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            // Deskripsi
+            Text(
+                text = stringResource(id = R.string.user_description),
+                color = Color.White,
+                fontSize = 16.sp
+            )
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            // Menu Buttons
+            MenuButton(icon = Icons.Filled.Lock, text = stringResource(id = R.string.menu_privacy))
+            MenuButton(icon = Icons.Filled.List, text = stringResource(id = R.string.menu_riwayat))
+            MenuButton(icon = Icons.Filled.Settings, text = stringResource(id = R.string.menu_pengaturan))
+
+            Spacer(modifier = Modifier.height(20.dp))
+
+            // Tombol Logout
+            Button(
+                onClick = { /* aksi logout */ },
+                colors = ButtonDefaults.buttonColors(containerColor = Color.Red),
+                shape = RoundedCornerShape(50),
+                modifier = Modifier
+                    .fillMaxWidth(0.8f)
+                    .height(50.dp)
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.ExitToApp,
+                    contentDescription = null,
+                    tint = Color.White
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                Text(text = stringResource(id = R.string.menu_logout), color = Color.White)
+            }
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            // Footer
+            Text(
+                text = stringResource(id = R.string.footer_text),
+                color = Color.Gray,
+                fontSize = 12.sp
+            )
         }
-
-        Spacer(modifier = Modifier.height(24.dp))
-
-        // Footer
-        Text(
-            text = stringResource(id = R.string.footer_text),
-            color = Color.Gray,
-            fontSize = 12.sp
-        )
     }
 }
 
@@ -161,7 +173,7 @@ fun IconSosmed(iconId: Int) {
         modifier = Modifier
             .size(32.dp)
             .padding(horizontal = 6.dp)
-            .clickable() { /* buka link atau aksi sosial media */ },
+            .clickable { /* buka link sosial media */ },
         contentScale = ContentScale.Fit
     )
 }
